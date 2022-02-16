@@ -1,0 +1,7 @@
+{
+  "drinks": [
+    {"id": 1, "name": "Tea", "price": 1.50},
+    {"id": 2, "name": "Coffee", "price": 2.00},
+    {"id": 3, "name": "Ice Tea", "price": 3.70}
+  ]
+}

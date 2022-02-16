@@ -1,0 +1,30 @@
+/* You can add global styles to this file, and also import other style files */
+@use 'variables';
+
+body {
+    background: var(--background);
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import '~@angular/material/theming';
+@include mat-core();
+
+$acucafe-primary: mat-palette($mat-brown);
+$acucafe-accent: mat-palette($mat-blue-grey, A200, A100, A400);
+$acucafe-warn: mat-palette($mat-red);
+$acucafe-theme: mat-light-theme((
+  color: (
+    primary: $acucafe-primary,
+    accent: $acucafe-accent,
+    warn: $acucafe-warn,
+  )
+));
+
+@include angular-material-theme($acucafe-theme);
+
+

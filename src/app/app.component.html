@@ -1,0 +1,55 @@
+<header>
+  <span class="title">
+    <mat-icon inline="true">local_cafe</mat-icon>
+    <span class="text">AcuCafe</span>
+  </span>
+  <mat-icon>account_circle</mat-icon>
+</header>
+
+<h1>Welcome to the AcuCafe!</h1>
+
+<div class="main">
+  <h2>What would you like to drink?</h2>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Drink</mat-label>
+    <mat-select [(value)]="selectedDrink">
+      <mat-option *ngFor="let drink of drinks" [value]="drink">{{drink.name}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-slide-toggle color="primary" [(ngModel)]="hasMilk">Milk</mat-slide-toggle>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Quantity</mat-label>
+    <mat-select [(value)]="selectedQuantity">
+      <mat-option *ngFor="let n of quantities" [value]="n">{{n}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Payment currency</mat-label>
+    <mat-select [(value)]="selectedCurrency">
+      <mat-option
+        *ngFor="let currency of currencies"
+        [value]="currency">
+        {{ currency }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <button (click)="processOrder()" mat-flat-button color="primary">Place Order</button>
+</div>
+
+<div *ngIf="showSummary">
+  <h2>Order Summary</h2>
+
+  <div>
+  x{{order.quantity}} {{order.drink.name}}
+  </div>
+  <div *ngIf="order.hasMilk">
+    Milk
+  </div>
+  <hr>
+  <h3>Total: <span *ngFor="let price of order.total">{{ price }} + </span></h3>
+</div>

@@ -1,0 +1,45 @@
+
+* {
+    box-sizing: border-box;
+}
+
+header {
+    height: 72px;
+    width: 100%;
+    background-color: var(--primary);
+    color: var(--onPrimary);
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 24px;
+    align-items: center;
+
+
+    .title {
+        font-size: 48px;
+
+        mat-icon {
+            margin-right: 16px;
+        }
+        .text {
+            //styleName: Headline 1;
+            font-family: Fugue;
+            font-size: 40px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 44px;
+            letter-spacing: 0px;
+            text-align: left;
+        }
+    }
+}
+
+
+.main {
+    display: flex;
+    flex-direction: column;
+    width: 595px;
+    padding: 24px;
+    margin-top: 24px;
+    background: var(--surface);
+    color: var(--onSurface);
+}
