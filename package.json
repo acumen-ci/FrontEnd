@@ -7,7 +7,6 @@
     "serve": "ng serve --open",
     "dev": "json-server --watch db.json --delay 3000",
     "build": "ng build",
-    "test": "jest --watch --collectCoverage",
     "lint": "ng lint"
   },
   "private": true,
